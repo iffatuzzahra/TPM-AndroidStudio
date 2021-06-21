@@ -29,12 +29,12 @@ public class NoteFragment extends Fragment {
     public NoteFragment() {
         // Required empty public constructor
     }
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//        List<NoteModel> noteList = appDatabase.noteDao().getAll();
-//        noteAdapter.setData(noteList);
-//    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        List<NoteModel> noteList = appDatabase.noteDao().getAll();
+        noteAdapter.setData(noteList);
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

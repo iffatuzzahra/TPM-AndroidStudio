@@ -7,6 +7,7 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.proyektpmsportapidatabase.R;
 import com.example.proyektpmsportapidatabase.data.local.AppDatabase;
@@ -37,19 +38,19 @@ public class AddActivity extends AppCompatActivity {
         appDatabase = AppDatabase.getInstance(this);
 
         btnAdd.setOnClickListener(v -> {
+            try {
+                String textNote = etAdd.getText().toString();
+                String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
-            String textNote = etAdd.getText().toString();
-            String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+                NoteModel noteModel = new NoteModel(sportname, textNote, date);
+                appDatabase.noteDao().insert(noteModel);
+                Log.d("btn Add3",noteModel.toString());
 
-            Log.d("sportName",sportname);
-            Log.d("textnote",textNote);
-            Log.d("dateNote",date);
+                this.finish();
+            } catch (NumberFormatException nfe) {
+                Toast.makeText(getApplicationContext(), "Cant Save Empty Notes", Toast.LENGTH_SHORT).show();
+            }
 
-            NoteModel noteModel = new NoteModel(sportname, textNote, date);
-            appDatabase.noteDao().insert(noteModel);
-            Log.d("btn Add3",noteModel.toString());
-
-            this.finish();
         });
     }
 }

@@ -20,11 +20,9 @@ import java.util.List;
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder>{
     private List<NoteModel> noteList;
 
-    public void setData(List<NoteModel> noteList) {
+    public void setData(List<NoteModel> list) {
         Log.d("Set Data Adapter","Data set");
-        noteList.clear();
-        noteList.addAll(noteList);
-        this.noteList = noteList;
+        noteList = list;
         notifyDataSetChanged();
     }
     @NonNull
