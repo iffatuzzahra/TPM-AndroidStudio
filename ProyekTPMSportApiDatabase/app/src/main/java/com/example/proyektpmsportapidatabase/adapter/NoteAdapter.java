@@ -1,5 +1,6 @@
 package com.example.proyektpmsportapidatabase.adapter;
 
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.proyektpmsportapidatabase.R;
 import com.example.proyektpmsportapidatabase.data.local.AppDatabase;
 import com.example.proyektpmsportapidatabase.model.note.NoteModel;
+import com.example.proyektpmsportapidatabase.view.activity.AddActivity;
+import com.example.proyektpmsportapidatabase.view.activity.EditActivity;
 
 import java.util.List;
 
@@ -63,6 +66,14 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
             sportNote.setText(noteModel.getSportNote());
             dateNote.setText(noteModel.getDateNote());
             textNote.setText(noteModel.getTextNote());
+
+            btnEdit.setOnClickListener(v -> {
+                Intent editNote = new Intent(itemView.getContext(), EditActivity.class);
+                editNote.putExtra("idNote", noteModel.getIdNote());
+                editNote.putExtra("sportname", noteModel.getSportNote());
+                editNote.putExtra("textNote", noteModel.getTextNote());
+                itemView.getContext().startActivity(editNote);
+            });
 
             btnDelete.setOnClickListener(v -> {
                 AppDatabase appDatabase = AppDatabase.getInstance(itemView.getContext());

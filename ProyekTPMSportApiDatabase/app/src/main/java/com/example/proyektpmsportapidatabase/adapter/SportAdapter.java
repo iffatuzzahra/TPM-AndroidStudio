@@ -69,6 +69,7 @@ public class SportAdapter extends RecyclerView.Adapter<SportAdapter.SportViewHol
                 addNote.putExtra("sportname", sportsItem.getStrSport());
                 itemView.getContext().startActivity(addNote);
             });
+
         }
     }
 }

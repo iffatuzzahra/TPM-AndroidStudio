@@ -17,35 +17,42 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class AddActivity extends AppCompatActivity {
-    private EditText etAdd;
-    private Button btnAdd;
+public class EditActivity extends AppCompatActivity {
+    private EditText etEdit;
+    private Button btnEdit;
     private TextView tvTitle;
     private AppDatabase appDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add);
+        setContentView(R.layout.activity_edit);
 
-        etAdd = findViewById(R.id.et_addnote);
-        btnAdd = findViewById(R.id.btn_done_addnote);
-        tvTitle = findViewById(R.id.t_title_addnote);
+        etEdit = findViewById(R.id.et_editnote);
+        tvTitle = findViewById(R.id.t_title_editnote);
+        btnEdit = findViewById(R.id.btn_done_editnote);
 
+        int id = getIntent().getIntExtra("idNote", 0);
         String sportname = getIntent().getStringExtra("sportname");
         tvTitle.setText(sportname);
+        String textNote = getIntent().getStringExtra("textNote");
+        etEdit.setText(textNote);
 
         appDatabase = AppDatabase.getInstance(this);
 
-        btnAdd.setOnClickListener(v -> {
-            String textNote = etAdd.getText().toString();
+        btnEdit.setOnClickListener(v -> {
+
+            String textEdit = etEdit.getText().toString();
             String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
-            if (textNote.isEmpty()) {
-                etAdd.setError("Can't Save Empty Note");
-            } else {
-                NoteModel noteModel = new NoteModel(sportname, textNote, date);
-                appDatabase.noteDao().insert(noteModel);
+            if (textEdit.isEmpty()) {
+                etEdit.setError("Can't Save Empty Note");
+            }
+            else {
+
+                NoteModel noteModel = new NoteModel(sportname, textEdit, date);
+                noteModel.setIdNote(id);
+                appDatabase.noteDao().update(noteModel);
 
                 this.finish();
             }
