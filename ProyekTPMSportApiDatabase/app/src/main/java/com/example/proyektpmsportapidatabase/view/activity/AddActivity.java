@@ -41,9 +41,13 @@ public class AddActivity extends AppCompatActivity {
             String textNote = etAdd.getText().toString();
             String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
+            Log.d("sportName",sportname);
+            Log.d("textnote",textNote);
+            Log.d("dateNote",date);
+
             NoteModel noteModel = new NoteModel(sportname, textNote, date);
             appDatabase.noteDao().insert(noteModel);
-            Log.d("btn Add3","after insert");
+            Log.d("btn Add3",noteModel.toString());
 
             this.finish();
         });
