@@ -33,15 +33,17 @@ public class AddActivity extends AppCompatActivity {
 
         String sportname = getIntent().getStringExtra("sportname");
         tvTitle.setText(sportname);
-        Log.d("masuk form add",sportname);
+
+        appDatabase = AppDatabase.getInstance(this);
 
         btnAdd.setOnClickListener(v -> {
-            Log.d("btn Add2","masuk");
+
             String textNote = etAdd.getText().toString();
             String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
             NoteModel noteModel = new NoteModel(sportname, textNote, date);
             appDatabase.noteDao().insert(noteModel);
+            Log.d("btn Add3","after insert");
 
             this.finish();
         });

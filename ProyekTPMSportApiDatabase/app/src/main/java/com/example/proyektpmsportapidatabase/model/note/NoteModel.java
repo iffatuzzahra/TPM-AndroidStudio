@@ -6,7 +6,6 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "Notesport")
 public class NoteModel {
-
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "idNote")
     private int idNote;
