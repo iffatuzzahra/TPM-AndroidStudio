@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiMain {
     private Retrofit retrofit;
     String BASE_URL = "https://www.thesportsdb.com/api/v1/json/1/";
-
+    //https://www.thesportsdb.com/api/v1/json/1/all_sports.php
     public SportRepository getApiSport() {
         if (retrofit == null) {
             retrofit = new  Retrofit

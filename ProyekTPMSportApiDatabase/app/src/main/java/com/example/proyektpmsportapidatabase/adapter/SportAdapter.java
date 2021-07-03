@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class SportAdapter extends RecyclerView.Adapter<SportAdapter.SportViewHolder> {
     private ArrayList<SportsItem> sportsItems = new ArrayList<>();
-    private Context context;
+    //private Context context;
 
     public void setData(ArrayList<SportsItem> items) {
         sportsItems.clear();

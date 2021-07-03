@@ -32,6 +32,7 @@ public class AddActivity extends AppCompatActivity {
         btnAdd = findViewById(R.id.btn_done_addnote);
         tvTitle = findViewById(R.id.t_title_addnote);
 
+        //ambil sport name
         String sportname = getIntent().getStringExtra("sportname");
         tvTitle.setText(sportname);
 

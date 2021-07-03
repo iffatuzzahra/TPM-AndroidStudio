@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 loadFragment(new SportFragment());
                 break;
             case R.id.note_ico:
-                Log.d("Fragment","Masuk Fragment");
+                //Log.d("Fragment","Masuk Fragment");
                 loadFragment(new NoteFragment());
                 break;
 
