@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black_transparent_10"
+        android:padding="4dp">
+
+        <TextView
+            android:id="@+id/tv_s_rank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rank "
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv_d_rank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@id/tv_s_rank"
+            android:text="1"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv_d_rank_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@id/tv_d_rank"
+            android:text="League Name"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/img_rank"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_below="@id/tv_d_rank_title"
+            android:layout_marginRight="14dp"
+            android:src="@drawable/star_24" />
+        <!--played-->
+        <TextView
+            android:id="@+id/tv_s_played"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_d_rank_title"
+            android:layout_toRightOf="@+id/img_rank"
+            android:text="Played : " />
+
+        <TextView
+            android:id="@+id/tv_d_played"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_d_rank_title"
+            android:layout_marginRight="24dp"
+            android:layout_toRightOf="@+id/tv_s_played"
+            android:text="1" />
+        <!--point-->
+        <TextView
+            android:id="@+id/tv_s_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_d_rank_title"
+            android:layout_toRightOf="@+id/tv_d_played"
+            android:text="Point : " />
+
+        <TextView
+            android:id="@+id/tv_d_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_d_rank_title"
+            android:layout_toRightOf="@+id/tv_s_point"
+            android:text="1" />
+        <!--Win-->
+        <TextView
+            android:id="@+id/tv_s_win"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_d_played"
+            android:layout_toRightOf="@+id/img_rank"
+            android:text="Win : " />
+
+        <TextView
+            android:id="@+id/tv_d_win"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_d_played"
+            android:layout_marginRight="24dp"
+            android:layout_toRightOf="@+id/tv_s_win"
+            android:text="1" />
+        <!--Loss-->
+        <TextView
+            android:id="@+id/tv_s_loss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_d_played"
+            android:layout_toRightOf="@+id/tv_d_win"
+            android:text="Loss : " />
+
+        <TextView
+            android:id="@+id/tv_d_loss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_d_played"
+            android:layout_marginRight="24dp"
+            android:layout_toRightOf="@+id/tv_s_loss"
+            android:text="1" />
+        <!--Draw-->
+        <TextView
+            android:id="@+id/tv_s_draw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_d_played"
+            android:layout_toRightOf="@+id/tv_d_loss"
+            android:text="Draw : " />
+
+        <TextView
+            android:id="@+id/tv_d_draw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_d_played"
+            android:layout_marginRight="24dp"
+            android:layout_toRightOf="@+id/tv_s_draw"
+            android:text="1" />
+        <!--Updated-->
+        <TextView
+            android:id="@+id/tv_s_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_d_win"
+            android:layout_toRightOf="@id/img_rank"
+            android:text="Info Updated : " />
+
+        <TextView
+            android:id="@+id/tv_d_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_d_win"
+            android:layout_marginRight="24dp"
+            android:layout_toRightOf="@+id/tv_s_update"
+            android:text="2020-16-72 00:00:00" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
